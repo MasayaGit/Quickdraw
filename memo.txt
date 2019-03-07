@@ -1,0 +1,16 @@
+pillowのインストール
+opencvのインストール
+pytorchのインストール
+
+
+import matplotlib 
+matplotlib.use('tkagg') 
+
+param18 = torch.load('quickdrawResnet18.model',map_location='cpu')
+
+param34 = torch.load('quickdrawResnet34.model',map_location='cpu')
+
+の追加
+
+起動は
+python3 drawOriginal.py 

@@ -4,7 +4,12 @@ from PIL import Image, ImageDraw, ImageOps
 import numpy as np
 import tkinter
 import cv2
+
+import matplotlib 
+matplotlib.use('tkagg') 
+
 import matplotlib.pyplot as plt
+
 
 import torch
 import torch.nn as nn
@@ -131,12 +136,12 @@ class Scribble(object):
         
        
         #Resnet18
-        param18 = torch.load('quickdrawResnet18.model')
+        param18 = torch.load('quickdrawResnet18.model',map_location='cpu')
         self.resnet18 = model18.to('cpu')
         self.resnet18.load_state_dict(param18)
 
         #Resnet34
-        param34 = torch.load('quickdrawResnet34.model')
+        param34 = torch.load('quickdrawResnet34.model',map_location='cpu')
         self.resnet34 = model34.to('cpu')
         self.resnet34.load_state_dict(param34)
 
